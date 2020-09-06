@@ -87,3 +87,5 @@ select
     (select name from test_cities
         where label = `to`) `to`
 from test_flights;
+drop table if exists test_flights;
+drop table if exists test_cities;
