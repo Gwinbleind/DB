@@ -1,27 +1,38 @@
 # Описание проекта
-БД описывает магазин одежды, поддерживающий несколько магазинов-складов по стране
+БД описывает интернет-магазин модной одежды, поддерживающий несколько магазинов-складов по стране
 ## Структура таблиц
-1. Категории товаров **Category**
+1. Категории товаров **category**
     - id
     - name 
     - root_category_id - id категории-родителя, иначе null
-1. Материалы изготовления товаров **Materials**
+1. Материалы изготовления товаров **materials**
     - id
     - name
-1. Список товаров
+1. Авторы коллекций **authors**
     - id
-    - category_id - внешний ключ Category.id
+    - name
+1. Сезон коллекции **seasons**
+    - id
+    - name
+    - from_date - дата начала сезона
+    - to_date - дата завершения сезона
+1. Список товаров **products**
+    - id
+    - category_id - внешний ключ category.id
     - name
     - price
-    - material_id - внешний ключ Materials.id
-1. Юзеры, таблица с данными входа **Users**
+    - material_id - внешний ключ materials.id
+    - author_id - внешний ключ authors.id
+    - season_id - внешний ключ seasons.id
+    - deleted - bool значение, товар больше не продается
+1. Юзеры, таблица с данными входа **users**
     - id
     - login
     - pass_hash - md5 хэш пароля
     - session - id сессии юзера
     - token - токен, выдающийся юзеру при входе с параметром "сохранить меня"
-1. Профили, таблица с данными клиента **Profiles**
-    - id - внешний ключ Users.id
+1. Профили, таблица с данными клиента **profiles**
+    - id - внешний ключ users.id
     - name - Имя
     - surname - Фамилия
     - gender - Пол
@@ -29,7 +40,7 @@
     - email - электронный адрес
     - address - почтовый адрес
     - phone - телефон для связи
-1. Магазины **Stores**
+1. Магазины **stores**
     - id
     - City
     - Address
@@ -37,28 +48,32 @@
     - Close_time
 1. Информация по товарам на складах магазинов **Warehouse**
     - id
-    - store_id - внешний ключ Stores.id
-    - product_id - внешний ключ Products.id
+    - store_id - внешний ключ stores.id
+    - product_id - внешний ключ products.id
     - amount - количество позиций на складе
-1. Отдельные заказы **Orders**
+1. Возможные статусы заказа **order_statuses**
     - id
-    - user_id - внешний ключ Users.id
+    - name (register, paid, on_package, sent, delivered, approved, lost, defective) - статус заказа, ограниченный выбор (оформлен, оплачен, передан на упаковку, отправлен, доставлен, получение подтверждено, утерян, поврежден)
+1. Отдельные заказы **orders**
+    - id
+    - user_id - внешний ключ users.id
     - cost - стоимость всего заказа
-    - store_id - внешний ключ Stores.id
+    - store_id - внешний ключ stores.id
     - order_date - дата и время создания заказа
     - delivery_date - дата доставки заказа
-    - status (register, paid, on_package, sent, delivered, approved, lost, defective) - статус заказа, ограниченный выбор (оформлен, оплачен, передан на упаковку, отправлен, доставлен, получение подтверждено, утерян, поврежден)
-1. Товары в заказах **Order_products**
+    - status_id - внешний ключ order_statuses.id
+1. Товары в заказах **order_products**
     - id
-    - product_id - внешний ключ Products.id
+    - order_id - внешний ключ orders.id
+    - product_id - внешний ключ products.id
     - amount - количество
     - price - цена, по которой был куплен продукт
     - cost - вычисляемый столбец стоимости
-1. Корзина - **Cart**
+1. Корзина - **cart**
     - id
-    - user_id - внешний ключ Users.id
+    - user_id - внешний ключ users.id
     - session - если корзина у незарегистрированного юзера, то она маркируется по сессии пользователя, user_id = null
-    - product_id - внешний ключ Products.id
+    - product_id - внешний ключ products.id
     - amount - количество товара в корзине
 1. ~~Избранное~~
 1. ~~Ожидания товаров~~
