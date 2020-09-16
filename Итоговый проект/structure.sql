@@ -25,6 +25,17 @@ create table materials
 create unique index materials_name_uindex
     on materials (name);
 
+drop table if exists sizes;
+create table sizes
+(
+    id serial not null,
+    name varchar(20) null,
+    constraint sizes_pk
+        primary key (id)
+);
+create unique index sizes_name_uindex
+    on sizes (name);
+
 drop table if exists authors;
 create table authors
 (
@@ -128,6 +139,7 @@ create table warehouse
     id serial not null,
     store_id bigint unsigned not null,
     product_id bigint unsigned not null,
+    size_id bigint unsigned not null,
     amount int not null,
     constraint warehouse_pk
         primary key (id),
@@ -136,13 +148,10 @@ create table warehouse
             on update cascade on delete cascade,
     constraint warehouse_stores_id_fk
         foreign key (store_id) references stores (id)
-            on update cascade on delete cascade
-);
-
-drop table if exists order_statuses;
-create table order_statuses (
-    id serial not null,
-    status varchar(15) not null
+            on update cascade on delete cascade,
+    constraint warehouse_sizes_id_fk
+        foreign key (size_id) references sizes (id)
+            on update cascade
 );
 
 drop table if exists order_statuses;
@@ -155,8 +164,6 @@ create table order_statuses
 );
 create unique index order_statuses_name_uindex
     on order_statuses (name);
-INSERT INTO project.order_statuses (name) VALUES
-('register'), ('paid'), ('on_package'), ('sent'), ('delivered'), ('approved'), ('lost'), ('defective');
 
 drop table if exists orders;
 create table orders
@@ -187,6 +194,7 @@ create table order_products
     id serial not null,
     order_id bigint unsigned not null,
     product_id bigint unsigned not null,
+    size_id bigint unsigned not null,
     amount int unsigned not null,
     price int unsigned not null,
     cost int as (amount * price),
@@ -197,6 +205,9 @@ create table order_products
             on update cascade,
     constraint order_products_products_id_fk
         foreign key (product_id) references products (id)
+            on update cascade,
+    constraint order_products_sizes_id_fk
+        foreign key (size_id) references sizes (id)
             on update cascade
 );
 
@@ -218,3 +229,30 @@ create table cart
             on update cascade on delete cascade
 );
 
+# Хранимые процедуры и функции.
+
+drop function if exists BD_is_coming;
+create function BD_is_coming(from_date date, bd date)
+    returns bigint deterministic
+begin
+    declare days decimal;
+    set days = round(mod(datediff(from_date,bd),365.25));
+    if (days > 365.25/2) then
+        return round(365.25-mod(datediff(from_date,bd),365.25));
+    else
+        return -round(mod(datediff(from_date,bd),365.25));
+    end if;
+end;
+
+# Представления
+
+drop view if exists user_info;
+create view user_info as
+    select
+        u.login as Login,
+        concat(p.name,' ',p.surname) as Name,
+        round(datediff(now(),birthday)/365.25) as Age
+#            ,
+#         mod(datediff(now(),birthday),365.25) as beforeBD
+    from users u
+    join profiles p on u.id = p.id
