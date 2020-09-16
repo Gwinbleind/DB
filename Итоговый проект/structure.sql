@@ -66,7 +66,7 @@ create table products
     id serial not null,
     category_id bigint unsigned,
     name varchar(40) not null,
-    price decimal(10,2) not null,
+    price decimal(10,2) unsigned not null,
     material_id bigint unsigned,
     author_id bigint unsigned,
     season_id bigint unsigned,
@@ -170,7 +170,7 @@ create table orders
 (
     id serial not null,
     user_id bigint unsigned not null,
-    cost int unsigned not null,
+    cost decimal(10,2) unsigned not null,
     store_id bigint unsigned not null,
     order_date datetime not null,
     delivery_date datetime not null,
@@ -196,7 +196,7 @@ create table order_products
     product_id bigint unsigned not null,
     size_id bigint unsigned not null,
     amount int unsigned not null,
-    price int unsigned not null,
+    price decimal(10,2) unsigned not null,
     cost int as (amount * price),
     constraint order_products_pk
         primary key (id),
@@ -245,14 +245,29 @@ begin
 end;
 
 # Представления
+drop view if exists orders_view;
+create view orders_view as
+    select
+        concat(p.name,' ',surname) as 'User',
+        s.city as `Deliver from`,
+        order_date as 'Ordered at',
+        os.name as 'Order status',
+        cost as 'Total cost',
+        user_id as 'User ID',
+        o.id as 'Order ID'
+    from orders o
+        join stores s on o.store_id = s.id
+        join order_statuses os on o.status_id = os.id
+        join profiles p on o.user_id = p.id
+    order by user_id;
 
-drop view if exists user_info;
-create view user_info as
+drop view if exists user_view;
+create view user_view as
     select
         u.login as Login,
         concat(p.name,' ',p.surname) as Name,
-        round(datediff(now(),birthday)/365.25) as Age
-#            ,
-#         mod(datediff(now(),birthday),365.25) as beforeBD
+        round(datediff(now(),birthday)/365.25) as Age,
+        BD_is_coming(now(),birthday) as beforeBD,
+        u.id
     from users u
-    join profiles p on u.id = p.id
+    join profiles p on u.id = p.id;

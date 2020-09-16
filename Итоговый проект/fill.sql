@@ -171,7 +171,7 @@ INSERT INTO `sizes` (`name`) VALUES ('XXL');
 #     KEY `stores_city_index` (`city`)
 # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('1', 'Port Gussieville', '53615 Annamae Tunnel\nCarrollshire, OR 36135', '14:15:22', '12:08:39');
+INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('1', 'Moenhaven', '53615 Annamae Tunnel\nCarrollshire, OR 36135', '14:15:22', '12:08:39');
 INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('2', 'West Heberport', '51676 Sabina Burgs Apt. 024\nGodfreyland, MA 16825', '14:23:04', '11:48:17');
 INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('3', 'East Elijah', '2609 Hintz Summit Apt. 745\nMacejkovichaven, MI 25853-9817', '13:14:54', '05:29:02');
 INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('4', 'Reynoldsview', '9322 Richie Vista Suite 109\nCartwrightville, MT 33468', '19:48:48', '19:02:28');
@@ -180,7 +180,7 @@ INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES
 INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('7', 'West Eloiseside', '300 Caleigh Village Suite 868\nWest Todstad, RI 77850', '11:42:04', '01:31:15');
 INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('8', 'Angelitatown', '71335 Parisian Villages\nAlexandromouth, MS 90488', '19:54:23', '07:06:35');
 INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('9', 'New Rickside', '30640 Elmo Path\nPort Joanneport, ME 51683', '13:36:41', '19:40:30');
-INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('10', 'New Jordynberg', '23299 Morar Fords\nWilliamsonborough, MD 49060', '11:19:01', '16:20:19');
+INSERT INTO `stores` (`id`, `city`, `address`, `open_time`, `close_time`) VALUES ('10', 'Moenhaven', '23299 Morar Fords\nWilliamsonborough, MD 49060', '11:19:01', '16:20:19');
 
 # Связанные таблицы
 
@@ -718,56 +718,56 @@ INSERT INTO `warehouse` (`id`, `store_id`, `product_id`, `size_id`, `amount`) VA
 #     CONSTRAINT `cart_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('1', '1', '2942fcp3i', '87', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('2', '4', '1521zaw7g', '94', 7);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('3', '5', '4343gbh9y', '61', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('4', '5', '0930pav9f', '79', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('5', '3', '1974yhg3h', '8', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('6', '6', '4388wsa5c', '80', 6);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('7', '5', '', '44', 1);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('8', '8', '8592dcr0k', '49', 7);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('9', '8', '5369acr8x', '98', 1);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('10', '1', '9499hdp1e', '38', 9);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('11', '6', '8960sdm6a', '15', 10);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('12', '7', '', '45', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('13', '2', '', '3', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('14', '6', '5672qcp6y', '90', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('15', '5', '3738qxz1d', '43', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('16', '1', '', '47', 1);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('17', '3', '', '43', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('18', '4', '1585ykp5w', '74', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('19', '1', '4973rcp1w', '90', 10);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('20', '6', '3733rjp3b', '30', 7);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('21', '10', '8134vai0y', '5', 10);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('22', '1', '', '39', 7);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('23', '5', '0252uvo1b', '88', 1);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('24', '9', '', '26', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('25', '9', '', '95', 7);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('26', '7', '', '40', 1);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('27', '1', '', '26', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('28', '9', '8418lsu5j', '26', 6);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('29', '3', '2059euj3r', '42', 10);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('30', '2', '', '68', 5);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('31', '9', '6940ksf3i', '21', 6);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('32', '2', '1158mmo0r', '13', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('33', '7', '4094ivb6h', '54', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('34', '9', '1199knq4v', '66', 6);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('35', '5', '', '37', 10);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('36', '10', '9288slv8e', '40', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('37', '5', '', '4', 10);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('38', '8', '', '88', 9);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('39', '10', '', '66', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('40', '2', '7758dcc0v', '77', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('41', '7', '', '77', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('42', '2', '9272qut6s', '70', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('43', '1', '', '1', 2);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('44', '10', '', '30', 9);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('45', '5', '', '11', 8);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('46', '10', '', '26', 7);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('47', '4', '5041sis9f', '12', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('48', '4', '', '93', 3);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('49', '7', '1864ptm2x', '23', 9);
-INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('50', '6', '8860hqj7s', '9', 1);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('1', null, '2942fcp3i', '87', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('2', null, '2942fcp3i', '94', 7);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('3', null, '2942fcp3i', '61', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('4', null, '0930pav9f', '79', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('5', null, '0930pav9f', '8', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('6', null, '0930pav9f', '80', 6);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('7', '5', null, '44', 1);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('8', null, '0930pav9f', '49', 7);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('9', null, '5369acr8x', '98', 1);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('10', null, '5369acr8x', '38', 9);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('11', null, '5369acr8x', '15', 10);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('12', '7', null, '45', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('13', '2', null, '3', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('14', null, '5369acr8x', '90', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('15', null, '5369acr8x', '43', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('16', '1', null, '47', 1);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('17', '3', null, '43', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('18', null, '1585ykp5w', '74', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('19', null, '1585ykp5w', '90', 10);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('20', null, '1585ykp5w', '30', 7);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('21', null, '1585ykp5w', '5', 10);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('22', '1', null, '39', 7);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('23', null, '0252uvo1b', '88', 1);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('24', '9', null, '26', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('25', '9', null, '95', 7);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('26', '7', null, '40', 1);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('27', '1', null, '26', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('28', null, '0252uvo1b', '26', 6);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('29', null, '0252uvo1b', '42', 10);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('30', '2', null, '68', 5);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('31', null, '0252uvo1b', '21', 6);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('32', null, '1158mmo0r', '13', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('33', null, '1158mmo0r', '54', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('34', null, '1158mmo0r', '66', 6);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('35', '5', null, '37', 10);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('36', null, '9288slv8e', '40', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('37', '5', null, '4', 10);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('38', '8', null, '88', 9);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('39', '10', null, '66', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('40', null, '7758dcc0v', '77', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('41', '7', null, '77', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('42', null, '9272qut6s', '70', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('43', '1', null, '1', 2);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('44', '10', null, '30', 9);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('45', '5', null, '11', 8);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('46', '10', null, '26', 7);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('47', null, '5041sis9f', '12', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('48', '4', null, '93', 3);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('49', null, '1864ptm2x', '23', 9);
+INSERT INTO `cart` (`id`, `user_id`, `session`, `product_id`, `amount`) VALUES ('50', null, '1864ptm2x', '9', 1);
 
 
 #
@@ -1070,3 +1070,14 @@ INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `size_id`, `amount
 INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `size_id`, `amount`, `price`) VALUES ('198', '48', '54', '2', 6, 9098);
 INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `size_id`, `amount`, `price`) VALUES ('199', '49', '48', '5', 5, 8876);
 INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `size_id`, `amount`, `price`) VALUES ('200', '50', '25', '6', 3, 7690);
+
+
+# Update right cost for all orders
+update orders o set
+    cost = (
+        select
+            sum(op.cost)
+        from order_products op
+        where order_id = o.id
+    )
+where 1;
