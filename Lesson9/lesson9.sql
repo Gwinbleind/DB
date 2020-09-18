@@ -1,25 +1,51 @@
 # 1. Transaction
-create schema shop;
-create schema sample;
+create schema if not exists shop;
+create schema if not exists sample;
+drop table if exists shop.users;
 create table shop.users (
     id serial not null,
     name varchar(10)
 );
 insert shop.users (name) values
 ('Name1'),('Name2');
+drop table if exists sample.users;
 create table sample.users(
 	id serial not null,
 	name varchar(10)
 );
-# Это работает только если реально существует запись с id=1
-# В противном случае происходит вставка null
-# Как можно получить ошибку при select для отката транзакции?
-start transaction;
-select * from shop.users shu where shu.id = 1;
-insert sample.users (name) value
-    ((select name from shop.users shu where shu.id = 1));
-delete from shop.users where id = 1;
-commit;
+drop procedure if exists sp_transaction_shift;
+create procedure sp_transaction_shift(out result varchar(200))
+begin
+    declare _rollback bool default 0;
+    declare code varchar(50);
+    declare err_msg varchar(200);
+    declare continue handler for sqlexception
+        begin
+            set _rollback = 1;
+            get stacked diagnostics condition 1
+                code = returned_sqlstate, err_msg = message_text;
+            set result = concat('Error: ',code,', message:',err_msg);
+        end;
+    start transaction;
+        if ((select count(id) from shop.users shu where shu.id = 1) = 1) then
+            insert sample.users (name) value
+                ((select name from shop.users shu where shu.id = 1));
+            delete from shop.users where id = 1;
+        else
+            set _rollback = 1;
+            set result = 'Error: user not found';
+        end if;
+    if (_rollback) then
+        rollback;
+    else
+        commit;
+        set result = 'OK';
+    end if;
+end;
+
+call sp_transaction_shift(@result);
+select @result;
+
 drop schema sample;
 # 2. View
 use shop;

@@ -90,26 +90,12 @@ where order_id = 9;
 select BD_is_coming(date(now()),'1992-09-10');
 
 # Корзина пользователя с id=1
-# Update cart
-update cart set
-    user_id = null
-where not session = '';
-update cart set
-    session = null
-where user_id is not null;
-
-select
-    id,
-    user_id,
-    isnull(user_id),
-    session,
-    isnull(session),
-    session = ''
-from cart;
-
 select
     p.name as Product,
     c.amount
 from cart c
     join products p on c.product_id = p.id
 where user_id = 1;
+
+# Cart to Order
+start transaction;
