@@ -218,6 +218,7 @@ create table cart
     user_id bigint unsigned null,
     session varchar(20) null,
     product_id bigint unsigned not null,
+    size_id bigint unsigned not null,
     amount int unsigned not null,
     constraint cart_pk
         primary key (id),
@@ -228,6 +229,8 @@ create table cart
         foreign key (user_id) references users (id)
             on update cascade on delete cascade
 );
+create unique index cart_users_id_fk
+    on cart (user_id, product_id);
 
 # Хранимые процедуры и функции.
 
