@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.authors</OriginalElement>
+  <nodes>
+    <node x="1570.8958333333333" y="36.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.materials</node>
+    <node x="303.0" y="229.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.orders</node>
+    <node x="751.8958333333333" y="0.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.stores</node>
+    <node x="810.8020833333333" y="560.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.warehouse</node>
+    <node x="266.64583333333326" y="548.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.cart</node>
+    <node x="1264.9375" y="217.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products</node>
+    <node x="1105.8958333333333" y="24.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.categories</node>
+    <node x="0.0" y="217.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.profiles</node>
+    <node x="95.5" y="0.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.users</node>
+    <node x="928.8958333333333" y="12.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.seasons</node>
+    <node x="548.0" y="289.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.sizes</node>
+    <node x="560.8020833333333" y="536.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.order_products</node>
+    <node x="1393.8958333333333" y="36.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.authors</node>
+    <node x="301.5" y="36.0">640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.order_statuses</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.order_products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products">
+      <point x="76.66666666666663" y="-107.5" />
+      <point x="752.46875" y="506.0" />
+      <point x="1379.9375" y="506.0" />
+      <point x="0.0" y="119.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.cart" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.sizes">
+      <point x="0.0" y="-95.5" />
+      <point x="377.64583333333326" y="486.0" />
+      <point x="574.1666666666667" y="486.0" />
+      <point x="-52.333333333333314" y="47.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.materials">
+      <point x="86.25" y="-119.5" />
+      <point x="1466.1875" y="197.0" />
+      <point x="1649.8958333333333" y="197.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.seasons">
+      <point x="-86.25" y="-119.5" />
+      <point x="1293.6875" y="197.0" />
+      <point x="1007.3958333333333" y="197.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.authors">
+      <point x="28.75" y="-119.5" />
+      <point x="1408.6875" y="187.0" />
+      <point x="1472.3958333333333" y="187.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.orders" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.order_statuses">
+      <point x="0.0" y="-107.5" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.categories">
+      <point x="-28.75" y="-119.5" />
+      <point x="1351.1875" y="187.0" />
+      <point x="1239.8958333333333" y="187.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.order_products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.sizes">
+      <point x="0.0" y="-107.5" />
+      <point x="675.8020833333333" y="486.0" />
+      <point x="626.5" y="486.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.warehouse" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.sizes">
+      <point x="-74.0" y="-83.5" />
+      <point x="847.8020833333333" y="476.0" />
+      <point x="678.8333333333334" y="476.0" />
+      <point x="52.333333333333314" y="47.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.orders" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.stores">
+      <point x="75.0" y="-107.5" />
+      <point x="490.5" y="197.0" />
+      <point x="791.1458333333333" y="197.0" />
+      <point x="-39.25" y="83.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.warehouse" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products">
+      <point x="74.0" y="-83.5" />
+      <point x="995.8020833333333" y="516.0" />
+      <point x="1456.604166666667" y="516.0" />
+      <point x="76.66666666666674" y="119.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.order_products" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.orders">
+      <point x="-76.66666666666669" y="-107.5" />
+      <point x="599.1354166666666" y="476.0" />
+      <point x="415.5" y="476.0" />
+      <point x="0.0" y="107.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.warehouse" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.stores">
+      <point x="0.0" y="-83.5" />
+      <point x="921.8020833333333" y="486.0" />
+      <point x="869.6458333333333" y="486.0" />
+      <point x="39.25" y="83.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.profiles" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.users">
+      <point x="0.0" y="-119.5" />
+      <point x="89.0" y="197.0" />
+      <point x="126.5" y="197.0" />
+      <point x="-62.0" y="83.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.orders" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.users">
+      <point x="-75.0" y="-107.5" />
+      <point x="340.5" y="197.0" />
+      <point x="250.5" y="197.0" />
+      <point x="62.0" y="83.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.cart" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.products">
+      <point x="74.0" y="-95.5" />
+      <point x="451.64583333333326" y="496.0" />
+      <point x="1303.2708333333335" y="496.0" />
+      <point x="-76.66666666666674" y="119.5" />
+    </edge>
+    <edge source="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.cart" target="640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.users">
+      <point x="-74.0" y="-95.5" />
+      <point x="303.64583333333326" y="516.0" />
+      <point x="188.5" y="516.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7324185248713551" x="864.5" y="375.5" />
+  <SelectedNodes>
+    <node>640a78b6-f426-46d6-9a6d-d39275e89d83.TABLE:project.authors</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
